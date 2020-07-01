@@ -50,7 +50,10 @@ function checkDatabase() {
       })
         .then(response => response.json())
         .then(() => {
+          const transaction = db.transaction(["expense"], "readwrite");
+          const store = transaction.objectStore("expense");
           store.clear()
+
           // if successful, open a transaction on your pending db
           // access your pending object store
           // clear all items in your store
