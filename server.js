@@ -24,7 +24,6 @@ app.use(require("./routes/api.js"));
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}!`);
 });
-const PORT = process.env.PORT || 3000
 
 
 const app = express();
